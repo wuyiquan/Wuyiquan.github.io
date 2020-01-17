@@ -359,6 +359,336 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/09/28/本周摘要/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            本周摘要
+实现了TextCNN模型，并在本金诉求上进行了分类预测。
+论文阅读为主
+
+本周详细进展
+baseline实现
+
+
+如图所示由于数据分布的不均匀，每个诉求的同意率都很高，且不同意的样本太少了，训练的效果难以保证。
+下图是训练的截图：
+
+下图是测试的结果（199:1的同意：不同意比）：
+
+因此这个模型不能作为我们的baseline来用，急需解决数据不均衡的问题。
+
+
+研读了两篇司法《Interpretable Charge Predictions for Criminal Cases: Learning to Generate Court Views from Fact Descr...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/28</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/28/Graph-embedding思考/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+常见的应用领域
+
+node classfication
+link prediction
+clustering
+visualization
+
+
+两种graph-embedding
+
+embedding node
+embedding graph
+
+
+embedding貌似都用在node数量很多的情况下，我们这里好像可以直接用d=|V|？
+
+多数KG都是三元组，两个entity和一个relation，也叫一个fact
+
+文本生成是否可以纯粹依靠KG？
+
+KG多是以entity为主体的问题
+
+输入文本的entity是否易于提取
+
+entity之间的关系是否明确且有价值
+
+###还是作为atte...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/28</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/28/BELU和ROUGE/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            BELU
+用处：对一个生成语句进行打分。
+统计单位为unigram、bigram、trigram、4gram，将四个单位的分数求平均，再乘上BP（短句惩罚）
+
+
+对于重复出现的词，有一个clip操作，即只取到参考句子中最多的次数为止。
+
+
+
+
+
+
+
+
+
+ROUGE
+对摘要进行打分
+用Recall的思想
+
+其中，n-gram表示n元词，{Ref Summaries}表示参考摘要，即事先获得的标准摘要，Countmatch(n-gram)表示系统摘要和参考摘要中同时出现n-gram的个数，Count(n-gram)则表示参考摘要中出现的n- gram个数。
+
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/28</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/08/faq提取/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+###任务描述
+从已有的数据库中抽出所有”债权债务纠纷”领域的queries，并从中提取出FAQ。
+
+###操作流程
+
+利用Elasticsearch的search操作和游标，滚动提取了所有”债权债务纠纷”领域的queries，一共有27w+，保存至csv，保留了’question_content’和’intent’两个attribute。
+根据每个问题的’intent’，再将所有queries分类，如果一个query的intent值为[]，则分到default类中，分类结果及大小如下：
+1.3M    债务人骗钱怎么办.csv
+1.8M    材料合规性.csv
+2.0M    抵押...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/08</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/03/08/SVMforMulticlass/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            SVM multiclass一层标签count：
+
+给每个label打上索引id
+
+找到每个标签关联度最强的词与词组
+###’借款未到期’:
+  . Most correlated unigrams:       . 四年       . 解除合同  . Most correlated bigrams:       . 借条 一年       . 没有 到期
+###’债权人资格’:
+  . Most correlated unigrams:       . 债权       . 陈冲  . Most correlated bigrams:       . 债权 原告       . 债权...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/08</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/03/07/分类问题常见的evaluation metrics/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            分类问题常见的evaluation metrics把结果分为四种
+
+本类样本被分到了本类中 TP
+本类样本被分到了错误类 FP
+其他类样本被分到了本类 FN
+其他类样本被分到了其他类 TN
+
+
+准确率（Accuracy）
+
+
+精确率（Precision)
+
+
+召回率 （Recall）
+
+
+F-measure
+
+
+
+通常Beta取1，即$$F_{1}$$。
+##多类的情况
+multilabel 或者 multiclass 时，会用到宏平均和微平均。
+宏平均会受小类别较大的影响。一方面，它可以使小类更多地参与计算，另一方面，也会使得一些不重要的小类影响评估结果。其计算方式如下：
+
+
+
+而微平...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/07</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/02/28/读书报告003/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            ##HINET: HIERARCHICAL CLASSIFICATION WITH NEURALN ETWORK
+1、多层标签用多层的神经网络来表示，第n层的第m个node，表示n级标签中的第m个。
+2、利用downpour的方法，来获得候选trace的MAP，每一层都有一个stop node，用来结束trace。最后选取MAP最大的trace作为结果。
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/28</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/02/27/读书报告002/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            Interpretable Charge Predictions for Criminal Cases: Learning to Generate Court Views from Fact Descriptions
+1、存在事实描述中，动机表述不明的情况，直接缩句效果一般。
+2、利用了罪名标签，辅助本院认为的解释。
+we only focus on generating the part of rationales in court views
+3、
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/27</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/02/25/读书报告001/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            Automatic Judgment Prediction via Legal Reading Comprehension
+1.数据都是无监督的，每个case都有五个相关法条做参考，注释掉了无用信息，如姓名等。
+2.是01预测
+3.创新点在于用了RC的理论，然后是double pair。诉称和法条分别与事实认定进行计算，得到一个中间状态序列，并用这个中间状态序列来预测0或1。
+These models employ various attention mechanism to model the interaction between passage and query.
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/11/TF-IDF/">
             
                 <span>TF-IDF</span>
@@ -377,34 +707,11 @@ TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆�
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -616,9 +923,122 @@ More...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -631,6 +1051,87 @@ More...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href="/2019/09/28/本周摘要/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/03/07/分类问题常见的evaluation metrics/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href="/2019/06/28/Graph-embedding思考/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href="/2019/06/28/BELU和ROUGE/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href="/2019/05/08/faq提取/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/02/28/读书报告003/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/08</span><a class="archive-post-title" href="/2019/03/08/SVMforMulticlass/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href="/2019/02/27/读书报告002/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/2019/02/25/读书报告001/">[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">

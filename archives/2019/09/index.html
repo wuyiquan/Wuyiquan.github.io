@@ -346,45 +346,33 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/TF-IDF/">
+        <a class="abstract-title" href="/2019/09/28/本周摘要/">
             
-                <span>TF-IDF</span>
+                <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            最近做的项目需要无监督的抽取一些标签，本来想粗暴的用词频来抽取，后来同事说可以试试TF-IDF，我就自学了一下，现做摘记如下：
-TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆文档频率，是当前非常常用的一种文本特征的提取方法，在文本信息检索，语意抽取等自然语言处理（NLP）中广泛应用。TF:即词频，定义有很多，这里定义如下：$$TF(w)=\frac{c_{w}}{c_{total}}{\tag 1}$$其中，$c_{w}$指在目标文档中某个词出现的次数，$c_{total}$指目标文档所有词出现的次数之和（也...
+            本周摘要
+实现了TextCNN模型，并在本金诉求上进行了分类预测。
+论文阅读为主
+
+本周详细进展
+baseline实现
+
+
+如图所示由于数据分布的不均匀，每个诉求的同意率都很高，且不同意的样本太少了，训练的效果难以保证。
+下图是训练的截图：
+
+下图是测试的结果（199:1的同意：不同意比）：
+
+因此这个模型不能作为我们的baseline来用，急需解决数据不均衡的问题。
+
+
+研读了两篇司法《Interpretable Charge Predictions for Criminal Cases: Learning to Generate Court Views from Fact Descr...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/28</span>
             </div>
             <!-- tags  -->
             

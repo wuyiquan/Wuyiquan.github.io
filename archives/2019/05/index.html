@@ -346,45 +346,27 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/TF-IDF/">
+        <a class="abstract-title" href="/2019/05/08/faq提取/">
             
-                <span>TF-IDF</span>
+                <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            最近做的项目需要无监督的抽取一些标签，本来想粗暴的用词频来抽取，后来同事说可以试试TF-IDF，我就自学了一下，现做摘记如下：
-TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆文档频率，是当前非常常用的一种文本特征的提取方法，在文本信息检索，语意抽取等自然语言处理（NLP）中广泛应用。TF:即词频，定义有很多，这里定义如下：$$TF(w)=\frac{c_{w}}{c_{total}}{\tag 1}$$其中，$c_{w}$指在目标文档中某个词出现的次数，$c_{total}$指目标文档所有词出现的次数之和（也...
+            
+###任务描述
+从已有的数据库中抽出所有”债权债务纠纷”领域的queries，并从中提取出FAQ。
+
+###操作流程
+
+利用Elasticsearch的search操作和游标，滚动提取了所有”债权债务纠纷”领域的queries，一共有27w+，保存至csv，保留了’question_content’和’intent’两个attribute。
+根据每个问题的’intent’，再将所有queries分类，如果一个query的intent值为[]，则分到default类中，分类结果及大小如下：
+1.3M    债务人骗钱怎么办.csv
+1.8M    材料合规性.csv
+2.0M    抵押...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/08</span>
             </div>
             <!-- tags  -->
             

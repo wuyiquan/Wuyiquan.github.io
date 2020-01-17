@@ -346,18 +346,44 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/TF-IDF/">
+        <a class="abstract-title" href="/2019/06/28/Graph-embedding思考/">
             
-                <span>TF-IDF</span>
+                <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            最近做的项目需要无监督的抽取一些标签，本来想粗暴的用词频来抽取，后来同事说可以试试TF-IDF，我就自学了一下，现做摘记如下：
-TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆文档频率，是当前非常常用的一种文本特征的提取方法，在文本信息检索，语意抽取等自然语言处理（NLP）中广泛应用。TF:即词频，定义有很多，这里定义如下：$$TF(w)=\frac{c_{w}}{c_{total}}{\tag 1}$$其中，$c_{w}$指在目标文档中某个词出现的次数，$c_{total}$指目标文档所有词出现的次数之和（也...
+            
+常见的应用领域
+
+node classfication
+link prediction
+clustering
+visualization
+
+
+两种graph-embedding
+
+embedding node
+embedding graph
+
+
+embedding貌似都用在node数量很多的情况下，我们这里好像可以直接用d=|V|？
+
+多数KG都是三元组，两个entity和一个relation，也叫一个fact
+
+文本生成是否可以纯粹依靠KG？
+
+KG多是以entity为主体的问题
+
+输入文本的entity是否易于提取
+
+entity之间的关系是否明确且有价值
+
+###还是作为atte...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/28</span>
             </div>
             <!-- tags  -->
             
@@ -370,21 +396,38 @@ TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/hello-world/">
+        <a class="abstract-title" href="/2019/06/28/BELU和ROUGE/">
             
-                <span>Hello World</span>
+                <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
+            BELU
+用处：对一个生成语句进行打分。
+统计单位为unigram、bigram、trigram、4gram，将四个单位的分数求平均，再乘上BP（短句惩罚）
+
+
+对于重复出现的词，有一个clip操作，即只取到参考句子中最多的次数为止。
+
+
+
+
+
+
+
+
+
+ROUGE
+对摘要进行打分
+用Recall的思想
+
+其中，n-gram表示n元词，{Ref Summaries}表示参考摘要，即事先获得的标准摘要，Countmatch(n-gram)表示系统摘要和参考摘要中同时出现n-gram的个数，Count(n-gram)则表示参考摘要中出现的n- gram个数。
+
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/28</span>
             </div>
             <!-- tags  -->
             

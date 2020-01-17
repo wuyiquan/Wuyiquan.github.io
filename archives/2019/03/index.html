@@ -346,18 +346,25 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/TF-IDF/">
+        <a class="abstract-title" href="/2019/03/08/SVMforMulticlass/">
             
-                <span>TF-IDF</span>
+                <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            最近做的项目需要无监督的抽取一些标签，本来想粗暴的用词频来抽取，后来同事说可以试试TF-IDF，我就自学了一下，现做摘记如下：
-TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆文档频率，是当前非常常用的一种文本特征的提取方法，在文本信息检索，语意抽取等自然语言处理（NLP）中广泛应用。TF:即词频，定义有很多，这里定义如下：$$TF(w)=\frac{c_{w}}{c_{total}}{\tag 1}$$其中，$c_{w}$指在目标文档中某个词出现的次数，$c_{total}$指目标文档所有词出现的次数之和（也...
+            SVM multiclass一层标签count：
+
+给每个label打上索引id
+
+找到每个标签关联度最强的词与词组
+###’借款未到期’:
+  . Most correlated unigrams:       . 四年       . 解除合同  . Most correlated bigrams:       . 借条 一年       . 没有 到期
+###’债权人资格’:
+  . Most correlated unigrams:       . 债权       . 陈冲  . Most correlated bigrams:       . 债权 原告       . 债权...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/08</span>
             </div>
             <!-- tags  -->
             
@@ -370,21 +377,45 @@ TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/hello-world/">
+        <a class="abstract-title" href="/2019/03/07/分类问题常见的evaluation metrics/">
             
-                <span>Hello World</span>
+                <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
+            分类问题常见的evaluation metrics把结果分为四种
+
+本类样本被分到了本类中 TP
+本类样本被分到了错误类 FP
+其他类样本被分到了本类 FN
+其他类样本被分到了其他类 TN
+
+
+准确率（Accuracy）
+
+
+精确率（Precision)
+
+
+召回率 （Recall）
+
+
+F-measure
+
+
+
+通常Beta取1，即$$F_{1}$$。
+##多类的情况
+multilabel 或者 multiclass 时，会用到宏平均和微平均。
+宏平均会受小类别较大的影响。一方面，它可以使小类更多地参与计算，另一方面，也会使得一些不重要的小类影响评估结果。其计算方式如下：
+
+
+
+而微平...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/07</span>
             </div>
             <!-- tags  -->
             

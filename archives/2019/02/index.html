@@ -346,18 +346,20 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/TF-IDF/">
+        <a class="abstract-title" href="/2019/02/28/读书报告003/">
             
-                <span>TF-IDF</span>
+                <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            最近做的项目需要无监督的抽取一些标签，本来想粗暴的用词频来抽取，后来同事说可以试试TF-IDF，我就自学了一下，现做摘记如下：
-TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆文档频率，是当前非常常用的一种文本特征的提取方法，在文本信息检索，语意抽取等自然语言处理（NLP）中广泛应用。TF:即词频，定义有很多，这里定义如下：$$TF(w)=\frac{c_{w}}{c_{total}}{\tag 1}$$其中，$c_{w}$指在目标文档中某个词出现的次数，$c_{total}$指目标文档所有词出现的次数之和（也...
+            ##HINET: HIERARCHICAL CLASSIFICATION WITH NEURALN ETWORK
+1、多层标签用多层的神经网络来表示，第n层的第m个node，表示n级标签中的第m个。
+2、利用downpour的方法，来获得候选trace的MAP，每一层都有一个stop node，用来结束trace。最后选取MAP最大的trace作为结果。
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/28</span>
             </div>
             <!-- tags  -->
             
@@ -370,21 +372,50 @@ TF-IDF全称为Term Frequency - Inverse Documentation Frequency，即词频-逆�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/hello-world/">
+        <a class="abstract-title" href="/2019/02/27/读书报告002/">
             
-                <span>Hello World</span>
+                <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
+            Interpretable Charge Predictions for Criminal Cases: Learning to Generate Court Views from Fact Descriptions
+1、存在事实描述中，动机表述不明的情况，直接缩句效果一般。
+2、利用了罪名标签，辅助本院认为的解释。
+we only focus on generating the part of rationales in court views
+3、
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/27</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/02/25/读书报告001/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            Automatic Judgment Prediction via Legal Reading Comprehension
+1.数据都是无监督的，每个case都有五个相关法条做参考，注释掉了无用信息，如姓名等。
+2.是01预测
+3.创新点在于用了RC的理论，然后是double pair。诉称和法条分别与事实认定进行计算，得到一个中间状态序列，并用这个中间状态序列来预测0或1。
+These models employ various attention mechanism to model the interaction between passage and query.
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
             </div>
             <!-- tags  -->
             
